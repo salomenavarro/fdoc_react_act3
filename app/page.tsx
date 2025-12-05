@@ -1,26 +1,24 @@
-import React from 'react'
 import NavigationButtons from './components/NavigationButtons';
-import SearchForm from './components/SearchForm';
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-4xl font-bold mb-4">Mi Tienda Online</h1>
-      <p className="text-lg mb-6">Bienvenido a nuestra tienda virtual</p>
-      
-      <NavigationButtons />
-      <SearchForm />
-      
-      <div className="bg-gray-50 p-6 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4">Funcionalidades Implementadas</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Navegación con componente Link</li>
-          <li>Navegación programática con useRouter</li>
-          <li>Formulario de búsqueda con parámetros URL</li>
-          <li>Botones de navegación (atrás, adelante, refrescar)</li>
-        </ul>
+    <div className="text-center p-10 bg-white rounded-xl shadow-2xl border border-gray-100">
+      <h1 className="text-5xl font-extrabold mb-4 text-indigo-700">
+        Bienvenido al Router de Next.js
+      </h1>
+      <p className="text-xl text-gray-600 mb-8">
+        Explora las diferentes rutas para ver la implementación de: Rutas Estáticas, Dinámicas, Anidadas, Catch-All, y Búsqueda con `searchParams`.
+      </p>
+
+      <div className="mt-8 border-t pt-6">
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">
+          Navegación Programática (Client Component)
+        </h2>
+        <NavigationButtons />
+        <p className="mt-4 text-sm text-gray-500">
+            Estos botones demuestran el uso del hook `useRouter` dentro de un Client Component.
+        </p>
       </div>
     </div>
   );
 }
-
