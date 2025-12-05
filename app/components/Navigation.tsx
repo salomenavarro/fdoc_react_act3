@@ -1,36 +1,24 @@
 import Link from 'next/link';
-import SearchForm from './SearchForm';
 
 export default function Navigation() {
-  const navItems = [
-    { name: 'Inicio', href: '/' },
-    { name: 'Productos', href: '/products' },
-    { name: 'Docs (Catch-All)', href: '/docs/intro/setup' },
-    { name: 'Anidada (Electro/1)', href: '/categories/electronics/products/1' },
-  ];
-
   return (
-    <header className="bg-white shadow-md">
-      <nav className="container mx-auto p-4 flex flex-wrap items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition duration-150">
-          DemoAppRouter
+    <nav className="bg-blue-600 text-white p-4 shadow-lg">
+      <div className="container mx-auto flex space-x-6">
+        <Link href="/" className="hover:text-blue-200 font-semibold transition duration-150">
+          Inicio
         </Link>
-        <div className="flex space-x-4 mt-2 md:mt-0">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-gray-600 hover:text-indigo-600 font-medium transition duration-150"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-        <div className="w-full md:w-auto mt-4 md:mt-0">
-          {/* Componente Cliente para la Búsqueda */}
-          <SearchForm />
-        </div>
-      </nav>
-    </header>
+        <Link href="/products" className="hover:text-blue-200 font-semibold transition duration-150">
+          Productos
+        </Link>
+        {/* Ejemplo de enlace a ruta Catch-All */}
+        <Link href="/docs/getting-started/setup" className="hover:text-blue-200 font-semibold transition duration-150">
+          Documentación
+        </Link>
+        {/* Ejemplo de enlace a ruta anidada */}
+        <Link href="/categories/electronics/products/999" className="hover:text-blue-200 font-semibold transition duration-150">
+          Producto Anidado
+        </Link>
+      </div>
+    </nav>
   );
 }
